@@ -17,16 +17,20 @@ class EstadisticasViewController: UIViewController {
     @IBOutlet weak var totalConfirmados: UILabel!
     @IBOutlet weak var nuevosConfirmados: UILabel!
     
+    @IBOutlet weak var searchPais: UISearchBar!
     @IBOutlet weak var tablaPaises: UITableView!
     
     
     var covidManager = CovidManager()
     var listaPaises: [CountriesStats] = []
     
+    var paisVisualizar: CountriesStats?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         covidManager.delegado = self
+        searchPais.delegate = self
         tablaPaises.delegate = self
         tablaPaises.dataSource = self
         
@@ -34,6 +38,13 @@ class EstadisticasViewController: UIViewController {
     }
 
 
+}
+
+// MARK: - SearchBar
+extension EstadisticasViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("Filtrar elementos")
+    }
 }
 
 // MARK: - UITableView
@@ -49,6 +60,19 @@ extension EstadisticasViewController: UITableViewDelegate, UITableViewDataSource
         return celda
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tablaPaises.deselectRow(at: indexPath, animated: true)
+        paisVisualizar = listaPaises[indexPath.row]
+        
+        performSegue(withIdentifier: "paisCovid", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "paisCovid" {
+            let verPais = segue.destination as! VistaDetalladaViewController
+            verPais.paisCovid = paisVisualizar
+        }
+    }
     
 }
 

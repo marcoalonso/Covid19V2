@@ -16,6 +16,8 @@
 		60539937289EE49D001E4879 /* CovidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60539936289EE49D001E4879 /* CovidManager.swift */; };
 		60539939289EE547001E4879 /* CovidDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60539938289EE547001E4879 /* CovidDatos.swift */; };
 		6053993B289EEF2D001E4879 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6053993A289EEF2D001E4879 /* Extension+UIView.swift */; };
+		6053993F289EF2FC001E4879 /* VistaDetalladaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6053993E289EF2FC001E4879 /* VistaDetalladaViewController.swift */; };
+		60539941289EF825001E4879 /* PaisDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60539940289EF825001E4879 /* PaisDatos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		60539936289EE49D001E4879 /* CovidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidManager.swift; sourceTree = "<group>"; };
 		60539938289EE547001E4879 /* CovidDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDatos.swift; sourceTree = "<group>"; };
 		6053993A289EEF2D001E4879 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		6053993E289EF2FC001E4879 /* VistaDetalladaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaDetalladaViewController.swift; sourceTree = "<group>"; };
+		60539940289EF825001E4879 /* PaisDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaisDatos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +68,34 @@
 			children = (
 				60539922289EE343001E4879 /* AppDelegate.swift */,
 				60539924289EE343001E4879 /* SceneDelegate.swift */,
-				60539926289EE343001E4879 /* EstadisticasViewController.swift */,
+				6053993D289EF2EB001E4879 /* Controller */,
 				60539928289EE343001E4879 /* Main.storyboard */,
 				6053992B289EE345001E4879 /* Assets.xcassets */,
 				6053992D289EE345001E4879 /* LaunchScreen.storyboard */,
 				60539930289EE345001E4879 /* Info.plist */,
-				60539936289EE49D001E4879 /* CovidManager.swift */,
-				60539938289EE547001E4879 /* CovidDatos.swift */,
+				6053993C289EF2E2001E4879 /* Model */,
 				6053993A289EEF2D001E4879 /* Extension+UIView.swift */,
 			);
 			path = CovidV2;
+			sourceTree = "<group>";
+		};
+		6053993C289EF2E2001E4879 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60539936289EE49D001E4879 /* CovidManager.swift */,
+				60539938289EE547001E4879 /* CovidDatos.swift */,
+				60539940289EF825001E4879 /* PaisDatos.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6053993D289EF2EB001E4879 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60539926289EE343001E4879 /* EstadisticasViewController.swift */,
+				6053993E289EF2FC001E4879 /* VistaDetalladaViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +171,9 @@
 			files = (
 				60539927289EE343001E4879 /* EstadisticasViewController.swift in Sources */,
 				60539937289EE49D001E4879 /* CovidManager.swift in Sources */,
+				60539941289EF825001E4879 /* PaisDatos.swift in Sources */,
 				6053993B289EEF2D001E4879 /* Extension+UIView.swift in Sources */,
+				6053993F289EF2FC001E4879 /* VistaDetalladaViewController.swift in Sources */,
 				60539923289EE343001E4879 /* AppDelegate.swift in Sources */,
 				60539925289EE343001E4879 /* SceneDelegate.swift in Sources */,
 				60539939289EE547001E4879 /* CovidDatos.swift in Sources */,

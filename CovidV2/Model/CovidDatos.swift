@@ -25,4 +25,5 @@ struct GlobalStats: Decodable {
 struct CountriesStats: Codable {
     let Country: String
     let TotalConfirmed: Int64
+    let TotalDeaths: Int64
 }
