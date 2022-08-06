@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EstadisticasViewController: UIViewController {
     
     @IBOutlet weak var fecha: UILabel!
     @IBOutlet weak var nuevasMuertes: UILabel!
@@ -30,17 +30,20 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: covidManagerProtocol {
+extension EstadisticasViewController: covidManagerProtocol {
     func cargarDatos(datos: CovidDatos) {
         DispatchQueue.main.async {
+            
             self.nuevosConfirmados.text = "Nuevos casos: \(datos.Global.NewConfirmed)"
             self.nuevasMuertes.text = "Muertes hoy: \(datos.Global.NewDeaths)"
-            self.totalRecuperados.text = "Recuperados hoy: \(datos.Global.TotalRecovered)"
             self.nuevosRecuperados.text = "Nuevos recuperados: \(datos.Global.NewRecovered)"
-            self.totalMuertes.text = "Total de meurtes: \(datos.Global.TotalDeaths)"
-            self.totalConfirmados.text = "Total de casos confirmados: \(datos.Global.TotalConfirmed)"
             
+            self.totalRecuperados.text = "Recuperados hoy: \(datos.Global.TotalRecovered)"
+            self.totalMuertes.text = "Total de muertes: \(datos.Global.TotalDeaths)"
             
+            let totalConfirmadosStyle = String(format: "%d", locale: Locale.current, datos.Global.TotalConfirmed)
+            
+            self.totalConfirmados.text = "Total de casos: \(totalConfirmadosStyle)"
             self.fecha.text = "Fecha: \(datos.Global.Date)"
         }
     }

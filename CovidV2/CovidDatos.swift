@@ -12,11 +12,11 @@ struct CovidDatos: Decodable {
 }
 
 struct GlobalStats: Decodable {
-    let  NewConfirmed: Double
-    let  TotalConfirmed: Double
-    let NewDeaths: Double
-    let TotalDeaths: Double
-    let NewRecovered: Double
-    let TotalRecovered: Double
+    let  NewConfirmed: Int64
+    let  TotalConfirmed: Int64
+    let NewDeaths: Int64
+    let TotalDeaths: Int64
+    let NewRecovered: Int64
+    let TotalRecovered: Int64
     let Date: String
 }
