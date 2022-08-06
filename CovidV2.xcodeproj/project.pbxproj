@@ -13,6 +13,8 @@
 		6053992A289EE343001E4879 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60539928289EE343001E4879 /* Main.storyboard */; };
 		6053992C289EE345001E4879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6053992B289EE345001E4879 /* Assets.xcassets */; };
 		6053992F289EE345001E4879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6053992D289EE345001E4879 /* LaunchScreen.storyboard */; };
+		60539937289EE49D001E4879 /* CovidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60539936289EE49D001E4879 /* CovidManager.swift */; };
+		60539939289EE547001E4879 /* CovidDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60539938289EE547001E4879 /* CovidDatos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6053992B289EE345001E4879 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6053992E289EE345001E4879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60539930289EE345001E4879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60539936289EE49D001E4879 /* CovidManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidManager.swift; sourceTree = "<group>"; };
+		60539938289EE547001E4879 /* CovidDatos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidDatos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				6053992B289EE345001E4879 /* Assets.xcassets */,
 				6053992D289EE345001E4879 /* LaunchScreen.storyboard */,
 				60539930289EE345001E4879 /* Info.plist */,
+				60539936289EE49D001E4879 /* CovidManager.swift */,
+				60539938289EE547001E4879 /* CovidDatos.swift */,
 			);
 			path = CovidV2;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60539927289EE343001E4879 /* ViewController.swift in Sources */,
+				60539937289EE49D001E4879 /* CovidManager.swift in Sources */,
 				60539923289EE343001E4879 /* AppDelegate.swift in Sources */,
 				60539925289EE343001E4879 /* SceneDelegate.swift in Sources */,
+				60539939289EE547001E4879 /* CovidDatos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
