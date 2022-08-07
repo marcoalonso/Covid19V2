@@ -24,6 +24,9 @@ class EstadisticasViewController: UIViewController {
     var covidManager = CovidManager()
     var listaPaises: [CountriesStats] = []
     
+    //Un arreglo para filtrar los paises
+    var paisesFiltrados: [CovidDatos] = []
+    
     var paisVisualizar: CountriesStats?
     
     override func viewDidLoad() {
