@@ -106,7 +106,10 @@ extension EstadisticasViewController: covidManagerProtocol {
             let totalConfirmadosStyle = String(format: "%d", locale: Locale.current, datos.Global.TotalConfirmed)
             
             self.totalConfirmados.text = "Total de casos: \(totalConfirmadosStyle)"
-            self.fecha.text = "Fecha: \(datos.Global.Date)"
+            
+            let strFecha = self.dateFormatter(fecha: datos.Global.Date)
+            print(datos.Global.Date)
+            self.fecha.text = "Fecha: \(strFecha)"
             
             //TableView
             self.listaPaises = datos.Countries
@@ -114,6 +117,18 @@ extension EstadisticasViewController: covidManagerProtocol {
             self.tablaPaises.reloadData()
         }
     }
+    
+    func dateFormatter(fecha: String) -> String {
+        // fecha de ejemplo
+         //let isoDate = "2016-04-14T10:44:00.209z"
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_MX_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm.ss.SSSz"
+        let date = dateFormatter.date(from:fecha)!
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: date)
+    }
+    
     
     func huboError(cualError: Error) {
         
