@@ -25,7 +25,7 @@ class EstadisticasViewController: UIViewController {
     var listaPaises: [CountriesStats] = []
     
     //Un arreglo para filtrar los paises
-    var paisesFiltrados: [CovidDatos] = []
+    var paisesFiltrados: [CountriesStats] = []
     
     var paisVisualizar: CountriesStats?
     
@@ -46,26 +46,39 @@ class EstadisticasViewController: UIViewController {
 // MARK: - SearchBar
 extension EstadisticasViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Filtrar elementos")
+        paisesFiltrados = []
+        
+        if searchText == "" {
+            paisesFiltrados = listaPaises
+        } else {
+            for pais in listaPaises {
+                if pais.Country.lowercased().contains(searchText.lowercased()) {
+                    paisesFiltrados.append(pais)
+                }//if pais
+            }//for
+        }//else
+        
+        //neceisto actualizar la tabla constantemente
+        self.tablaPaises.reloadData()
     }
 }
 
 // MARK: - UITableView
 extension EstadisticasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listaPaises.count
+        return paisesFiltrados.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tablaPaises.dequeueReusableCell(withIdentifier: "celda", for: indexPath)
-        celda.textLabel?.text = listaPaises[indexPath.row].Country
-        celda.detailTextLabel?.text = "Total de casos: \(listaPaises[indexPath.row].TotalConfirmed) "
+        celda.textLabel?.text = paisesFiltrados[indexPath.row].Country
+        celda.detailTextLabel?.text = "Total de casos: \(paisesFiltrados[indexPath.row].TotalConfirmed) "
         return celda
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tablaPaises.deselectRow(at: indexPath, animated: true)
-        paisVisualizar = listaPaises[indexPath.row]
+        paisVisualizar = paisesFiltrados[indexPath.row]
         
         performSegue(withIdentifier: "paisCovid", sender: self)
     }
@@ -97,6 +110,7 @@ extension EstadisticasViewController: covidManagerProtocol {
             
             //TableView
             self.listaPaises = datos.Countries
+            self.paisesFiltrados = self.listaPaises
             self.tablaPaises.reloadData()
         }
     }
